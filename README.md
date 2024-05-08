@@ -1,3 +1,9 @@
+# JSMole - Download Google Debugger Source locally
+
+<p align="center">
+<img src="./jsmole.png" width="300"/>
+</p>
+
 ## Description
 
 JsMole is a Go script designed to rapidly and faithfully download debugging sources equivalent to those presented by Google Web browsers (such as Chrome or Chromium).
