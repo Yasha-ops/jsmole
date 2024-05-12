@@ -5,6 +5,7 @@ import (
 	"io"
 	"net/http"
 	"net/url"
+  "crypto/tls"
 	"regexp"
 	"strings"
 )
@@ -64,6 +65,7 @@ func isMapAvailabe(url string) bool {
 }
 
 func (webQuery *WebQuery) GetMaps() ([]string, error) {
+  http.DefaultTransport.(*http.Transport).TLSClientConfig = &tls.Config{InsecureSkipVerify: true}
 	resp, err := http.Get(webQuery.Url)
 	if err != nil {
 		return []string{}, fmt.Errorf("website not reachable %v", err)

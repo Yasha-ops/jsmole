@@ -7,6 +7,7 @@ import (
 	"jsmole/utils"
 	"net/http"
 	"net/url"
+  "crypto/tls"
 	"os"
 	"strings"
 	"sync"
@@ -27,6 +28,8 @@ func download(downloadUrl string) (*os.File, error) {
 	if err != nil {
 		return nil, err
 	}
+
+  http.DefaultTransport.(*http.Transport).TLSClientConfig = &tls.Config{InsecureSkipVerify: true}
 
 	req, _ := http.NewRequest("GET", downloadUrl, nil)
 	resp, err := http.DefaultClient.Do(req)
