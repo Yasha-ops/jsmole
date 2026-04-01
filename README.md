@@ -20,7 +20,7 @@ Ensure you have Go installed on your system. If not, you can download and instal
 Clone this GitHub repository into your local directory:
 
 ```bash
-❯ git clone https://github.com/your-username/jsmole.git
+❯ git clone https://github.com/Yasha-ops/jsmole.git
 ❯ cd jsmole
 ```
 
